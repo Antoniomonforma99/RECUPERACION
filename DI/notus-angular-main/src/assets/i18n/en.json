@@ -1,0 +1,25 @@
+{
+    "global": {
+    },
+    "home": {
+        "navbar": {
+            "login": "Login"
+        },
+        "header": {
+            "": ""
+        },
+        "content": {
+            "sign_in_with": "Sign in with",
+            "sign_in_with_credentials":"Or sign in with credentials",
+            "email_label": "EMAIL",
+            "email_hint": "Email",
+            "password_label": "PASSWORD",
+            "password_hint": "Password",
+            "remember_me": "Remember me",
+            "sign_in_button": "SING IN",
+            "forgot_password": "Forgot password?",
+            "create_new_account": "Create new account"
+
+        }
+    }
+}
