@@ -51,6 +51,8 @@ import { HttpClient, HttpClientModule } from "@angular/common/http";
 import { TranslateLoader, TranslateModule } from "@ngx-translate/core";
 import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 import { AuthService } from "./services/auth.service";
+import { PoisComponent } from './views/admin/pois/pois/pois.component';
+import { PoisNewComponent } from './views/admin/pois-new/pois-new.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, '/assets/i18n/', '.json');
@@ -92,6 +94,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     IndexComponent,
     LandingComponent,
     ProfileComponent,
+    PoisComponent,
+    PoisNewComponent,
   ],
   imports: [
     BrowserModule, 

@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { TranslateService } from "@ngx-translate/core";
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: "app-auth-navbar",
@@ -9,8 +9,9 @@ export class AuthNavbarComponent implements OnInit {
   navbarOpen = false;
 
   constructor(translate: TranslateService) {
-    translate.setDefaultLang('en');
-    translate.use('en');
+    let browserLang = translate.getBrowserLang();
+    translate.setDefaultLang('en'); 
+    translate.use(browserLang);
   }
 
   ngOnInit(): void {}
