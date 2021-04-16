@@ -8,9 +8,13 @@ import { AuthService } from "src/app/services/auth.service";
 })
 export class LoginComponent implements OnInit {
 
-  constructor(translate: TranslateService, public auth: AuthService) {
-    translate.setDefaultLang('en');
-    translate.use('en');
+  constructor(private translate: TranslateService, private auth: AuthService) {
+    this.translate.setDefaultLang('en');
+    this.translate.use('en');
+  }
+
+  doGoogleSignIn() {
+    this.auth.googleSignin();
   }
 
   ngOnInit(): void {}
