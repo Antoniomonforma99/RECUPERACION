@@ -1,0 +1,112 @@
+<div class="flex flex-wrap mt-4">
+    <div class="w-full mb-12 px-4">
+  <div
+    class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded"
+    [ngClass]="color === 'light' ? 'bg-white' : 'bg-red-900 text-white'"
+  >
+    <div class="rounded-t bg-white mb-0 px-6 py-6">
+      <div class="text-center flex justify-between">
+        <h6 class="text-blueGray-700 text-xl font-bold">{{ 'admin.pages.users.title' | translate }}</h6>
+      </div>
+    </div>
+    <div class="block w-full overflow-x-auto">
+      <!-- Users table -->
+      <table class="items-center w-full bg-transparent border-collapse">
+        <thead>
+          <tr>
+            <th
+              class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
+              [ngClass]="
+                color === 'light'
+                  ? 'bg-blueGray-50 text-blueGray-500 border-blueGray-100'
+                  : 'bg-red-800 text-red-300 border-red-700'
+              "
+            >
+              Título
+            </th>
+            <th
+              class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
+              [ngClass]="
+                color === 'light'
+                  ? 'bg-blueGray-50 text-blueGray-500 border-blueGray-100'
+                  : 'bg-red-800 text-red-300 border-red-700'
+              ">
+              Director
+            </th>
+            <th
+              class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
+              [ngClass]="
+                color === 'light'
+                  ? 'bg-blueGray-50 text-blueGray-500 border-blueGray-100'
+                  : 'bg-red-800 text-red-300 border-red-700'
+              "
+            >
+              Vista
+            </th>
+            <th
+              class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
+              [ngClass]="
+                color === 'light'
+                  ? 'bg-blueGray-50 text-blueGray-500 border-blueGray-100'
+                  : 'bg-red-800 text-red-300 border-red-700'
+              "
+            >
+              ID
+            </th>
+            <th
+              class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
+              [ngClass]="
+                color === 'light'
+                  ? 'bg-blueGray-50 text-blueGray-500 border-blueGray-100'
+                  : 'bg-red-800 text-red-300 border-red-700'
+              "
+            ></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let movie of movieList">
+            <th
+              class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left flex items-center"
+            >
+              <img
+                [src]="movie.photoURL"
+                class="h-12 w-12 bg-white rounded-full border"
+                alt="..."
+              />
+              <span
+                class="ml-3 font-bold"
+                [ngClass]="color === 'light' ? 'text-blueGray-600' : 'text-white'"
+              >
+                {{movie.title}}
+              </span>
+            </th>
+            <td
+              class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+            >
+              {{movie.director}}
+            </td>
+            <td
+              class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+            >
+              <i [ngClass]="{'fas fa-circle mr-2': true, 'text-emerald-500': user.active == true, 'text-red-500': user.active != true}"></i> 
+              <span *ngIf="movie.seen; else inactive">Vista</span>
+              <ng-template #inactive>No vista</ng-template>
+            </td>
+            <td
+            class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+            >
+             {{movie.uid}}
+          </td>
+            <td
+              class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-right"
+            >
+              <app-table-dropdown></app-table-dropdown>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  </div>
+  </div>
+  

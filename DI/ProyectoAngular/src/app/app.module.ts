@@ -51,8 +51,14 @@ import { HttpClient, HttpClientModule } from "@angular/common/http";
 import { TranslateLoader, TranslateModule } from "@ngx-translate/core";
 import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 import { AuthService } from "./services/auth.service";
-import { PoisComponent } from './views/admin/pois/pois/pois.component';
+import { PoisComponent } from './views/admin/pois/pois.component';
 import { PoisNewComponent } from './views/admin/pois-new/pois-new.component';
+import { MovieEditComponent } from './views/admin/movie-edit/movie-edit.component';
+import { MoviesListComponent } from './views/admin/movies-list/movies-list.component';
+import { MoviesComponent } from './views/admin/movies/movies.component';
+import { SeriesComponent } from './views/admin/series/series.component';
+import { SeriesEditComponent } from './views/admin/series-edit/series-edit.component';
+import { SeriesListComponent } from './views/admin/series-list/series-list.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, '/assets/i18n/', '.json');
@@ -96,6 +102,12 @@ export function HttpLoaderFactory(http: HttpClient) {
     ProfileComponent,
     PoisComponent,
     PoisNewComponent,
+    MovieEditComponent,
+    MoviesListComponent,
+    MoviesComponent,
+    SeriesComponent,
+    SeriesEditComponent,
+    SeriesListComponent,
   ],
   imports: [
     BrowserModule, 

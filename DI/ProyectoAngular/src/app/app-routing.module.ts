@@ -8,6 +8,8 @@ import { AuthComponent } from "./layouts/auth/auth.component";
 // admin views
 import { DashboardComponent } from "./views/admin/dashboard/dashboard.component";
 import { MapsComponent } from "./views/admin/maps/maps.component";
+import { MoviesComponent } from "./views/admin/movies/movies.component";
+import { SeriesComponent } from "./views/admin/series/series.component";
 import { SettingsComponent } from "./views/admin/settings/settings.component";
 import { TablesComponent } from "./views/admin/tables/tables.component";
 
@@ -31,6 +33,7 @@ const routes: Routes = [
       { path: "tables", component: TablesComponent },
       { path: "maps", component: MapsComponent },
       { path: "", redirectTo: "dashboard", pathMatch: "full" },
+    
     ],
   },
   // auth views
@@ -46,8 +49,11 @@ const routes: Routes = [
   // no layout views
   { path: "profile", component: ProfileComponent },
   { path: "landing", component: LandingComponent },
+  { path: "movies", component: MoviesComponent },
+  { path: "series", component: SeriesComponent },
+
   { path: "", component: LandingComponent },
-  { path: "**", redirectTo: "", pathMatch: "full" },
+  { path: "**", redirectTo: "", pathMatch: "full" }
 ];
 
 @NgModule({
