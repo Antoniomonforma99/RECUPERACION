@@ -12,7 +12,6 @@ import { AuthComponent } from "./layouts/auth/auth.component";
 import { DashboardComponent } from "./views/admin/dashboard/dashboard.component";
 import { MapsComponent } from "./views/admin/maps/maps.component";
 import { SettingsComponent } from "./views/admin/settings/settings.component";
-import { TablesComponent } from "./views/admin/tables/tables.component";
 
 // auth views
 import { LoginComponent } from "./views/auth/login/login.component";
@@ -51,14 +50,18 @@ import { HttpClient, HttpClientModule } from "@angular/common/http";
 import { TranslateLoader, TranslateModule } from "@ngx-translate/core";
 import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 import { AuthService } from "./services/auth.service";
-import { PoisComponent } from './views/admin/pois/pois.component';
-import { PoisNewComponent } from './views/admin/pois-new/pois-new.component';
 import { MovieEditComponent } from './views/admin/movie-edit/movie-edit.component';
 import { MoviesListComponent } from './views/admin/movies-list/movies-list.component';
-import { MoviesComponent } from './views/admin/movies/movies.component';
-import { SeriesComponent } from './views/admin/series/series.component';
 import { SeriesEditComponent } from './views/admin/series-edit/series-edit.component';
 import { SeriesListComponent } from './views/admin/series-list/series-list.component';
+import { LangsDropdownComponent } from './components/dropdowns/langs-dropdown/langs-dropdown.component';
+import { AngularFireAuthModule } from "@angular/fire/auth";
+import { AngularFireModule } from "@angular/fire";
+import { AngularFireStorageModule } from "@angular/fire/storage";
+import { environment } from "src/environments/environment";
+import { ReactiveFormsModule } from "@angular/forms";
+import { MoviesNewComponent } from './views/admin/movies-new/movies-new.component';
+import { SeriesNewComponent } from './views/admin/series-new/series-new.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, '/assets/i18n/', '.json');
@@ -94,25 +97,28 @@ export function HttpLoaderFactory(http: HttpClient) {
     AuthComponent,
     MapsComponent,
     SettingsComponent,
-    TablesComponent,
     LoginComponent,
     RegisterComponent,
     IndexComponent,
     LandingComponent,
     ProfileComponent,
-    PoisComponent,
-    PoisNewComponent,
     MovieEditComponent,
     MoviesListComponent,
-    MoviesComponent,
-    SeriesComponent,
     SeriesEditComponent,
     SeriesListComponent,
+    LangsDropdownComponent,
+    MoviesNewComponent,
+    SeriesNewComponent,
   ],
   imports: [
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule, // firestore
+    AngularFireAuthModule, // auth
+    AngularFireStorageModule, // storage
     BrowserModule, 
     AppRoutingModule,
     HttpClientModule,
+    ReactiveFormsModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

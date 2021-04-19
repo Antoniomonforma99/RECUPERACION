@@ -7,7 +7,7 @@ import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firest
 
 import { Observable, of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
-import { User } from 'src/app/models/user.model';
+import { User } from 'src/app/models/user.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -35,7 +35,7 @@ export class AuthService {
    async googleSignin() {
     const provider = new firebase.auth.GoogleAuthProvider();
     const credential = await this.afAuth.signInWithPopup(provider);
-    return this.updateUserData(credential.user);
+    this.updateUserData(credential.user);
     
   }
 
@@ -48,9 +48,13 @@ export class AuthService {
       email: user.email, 
       displayName: user.displayName, 
       photoURL: user.photoURL
+
     } 
 
-    return userRef.set(data, { merge: true })
+    debugger;
+
+    userRef.set(data, { merge: true });
+    this.router.navigate(['/admin']);
 
   }
 

@@ -8,19 +8,19 @@ import { AuthComponent } from "./layouts/auth/auth.component";
 // admin views
 import { DashboardComponent } from "./views/admin/dashboard/dashboard.component";
 import { MapsComponent } from "./views/admin/maps/maps.component";
-import { MoviesComponent } from "./views/admin/movies/movies.component";
-import { SeriesComponent } from "./views/admin/series/series.component";
+import { SeriesListComponent } from "./views/admin/series-list/series-list.component";
+import { MoviesListComponent } from "./views/admin/movies-list/movies-list.component"
 import { SettingsComponent } from "./views/admin/settings/settings.component";
-import { TablesComponent } from "./views/admin/tables/tables.component";
 
 // auth views
 import { LoginComponent } from "./views/auth/login/login.component";
 import { RegisterComponent } from "./views/auth/register/register.component";
 
 // no layouts views
-import { IndexComponent } from "./views/index/index.component";
 import { LandingComponent } from "./views/landing/landing.component";
 import { ProfileComponent } from "./views/profile/profile.component";
+import { MoviesNewComponent } from "./views/admin/movies-new/movies-new.component";
+import { SeriesNewComponent } from "./views/admin/series-new/series-new.component";
 
 const routes: Routes = [
   // admin views
@@ -30,8 +30,11 @@ const routes: Routes = [
     children: [
       { path: "dashboard", component: DashboardComponent },
       { path: "settings", component: SettingsComponent },
-      { path: "tables", component: TablesComponent },
       { path: "maps", component: MapsComponent },
+      { path: "movies", component: MoviesListComponent },
+      { path: "series", component: SeriesListComponent },
+      { path: "movies/new", component: MoviesNewComponent},
+      { path: "series/new", component: SeriesNewComponent},
       { path: "", redirectTo: "dashboard", pathMatch: "full" },
     
     ],
@@ -43,14 +46,12 @@ const routes: Routes = [
     children: [
       { path: "login", component: LoginComponent },
       { path: "register", component: RegisterComponent },
-      { path: "", redirectTo: "login", pathMatch: "full" },
+      { path: "", component: LoginComponent, pathMatch: "full" },
     ],
   },
   // no layout views
   { path: "profile", component: ProfileComponent },
   { path: "landing", component: LandingComponent },
-  { path: "movies", component: MoviesComponent },
-  { path: "series", component: SeriesComponent },
 
   { path: "", component: LandingComponent },
   { path: "**", redirectTo: "", pathMatch: "full" }

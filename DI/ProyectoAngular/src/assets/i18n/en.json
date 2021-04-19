@@ -1,25 +1,122 @@
 {
     "global": {
+        "app_title": "VisitOn",
+        "lang": {
+            "fr": "French",
+            "en": "English",
+            "it": "Italian",
+            "eu": "Euskera"
+        }
     },
     "home": {
         "navbar": {
-            "login": "Login"
-        },
-        "header": {
+            "login": "Login",
             "": ""
         },
+        "header": {
+            "title": "",
+            "subtitle": "",
+            "box1_title": "",
+            "box1_subtitle": "",
+            "box2_title": "",
+            "box2_subtitle": "",
+            "box3_title": "",
+            "box3_subtitle": ""
+        },
         "content": {
-            "sign_in_with": "Sign in with",
-            "sign_in_with_credentials":"Or sign in with credentials",
-            "email_label": "EMAIL",
-            "email_hint": "Email",
-            "password_label": "PASSWORD",
-            "password_hint": "Password",
-            "remember_me": "Remember me",
-            "sign_in_button": "SING IN",
-            "forgot_password": "Forgot password?",
-            "create_new_account": "Create new account"
 
+        },
+        "footer": {
+            "about_us": "About us",
+            "school_links": "Collaborators",
+            "other_links": "Other Links",
+            "keep_in_touch": "Let's keep in touch!",
+            "find_us_text": "Find us on any of these social networks.",
+            "terms_and_conditions": "Terms & Conditions",
+            "privacy_policy": "Privacy Policy",
+            "contact_us": "Contact Us"
+        },
+        "footer_small": {
+            "about_us": "About us"
+        }
+    },
+    "admin": {
+        "sidebar": {
+            "movies": "Movies",
+            "series": "Series",
+            "my_profile": "My Profile",
+            "map": "Map"
+        },
+        "footer": {
+            
+        },
+        "pages": {
+            "dashboard": {},
+            "movies": {
+                "title": "Movies",
+                "new_movie": "New Movie"
+            },
+            "movies_new": {
+                "title": "New Movie",
+                "title_movie": "Movie title",
+                "title_movie_hint": "Write the title of the movie",
+                "director": "Director",
+                "director_hint": "Write the director's name",
+                "actors_main": "Main actors",
+                "actors_main_hint": "Write main actor's names",
+                "release_year": "Release year",
+                "release_year_hint": "Write the release year",
+                "genres": "Genre",
+                "genres_hint": "Write the genre or genres of the movie",
+                "save_movie": "Save movie"
+            },
+            "series": {
+                "title": "Series",
+                "new_serie": "New serie"
+            },
+            "series_new": {
+                "title": "New Serie",
+                "title_serie": "Serie title",
+                "title_serie_hint": "Write the title of the serie",
+                "director": "Director",
+                "director_hint": "Write the director's name",
+                "actors_main": "Main actors",
+                "actors_main_hint": "Write main actor's names",
+                "release_year": "Release year",
+                "release_year_hint": "Write the release year",
+                "genres": "Genre",
+                "genres_hint": "Write the genre or genres of the serie",
+                "save_serie": "Save serie"
+            },
+            "map": {},
+            "my_profile": {}
+        }
+    },
+    "auth": {
+        "login": {
+            "email_label": "Email",
+            "email_hint": "Email",
+            "password_label": "Password",
+            "password_hint": "Password",
+            "forgot_password": "Forgot password?",
+            "create_new_account": "Create new account",
+            "or_signin_with_credentials": "Or sign in with credentials",
+            "sign_in_with": "Sign in with",
+            "sign_in": "Sign in",
+            "remember_me": "Remember me"
+        },
+        "register": {
+            "or_signup_with_credentials": "Or sign up with credentials",
+            "name_label": "Name",
+            "name_hint": "Name",
+            "email_label": "Email",
+            "email_hint": "Email",
+            "password_label": "Password",
+            "password_hint": "Password",
+            "sign_up_with": "Sign up with",
+            "create_account": "Create account",
+            "privacy_policy": "Privacy Policy",
+            "i_agree_with": "I agree with the"
         }
     }
 }
