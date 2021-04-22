@@ -60,7 +60,7 @@
                 <td th:text="${#temporals.format(task.fechaCaducidad, 'dd/MM/yyyy')}">Otto</td>
                 <td th:text="${#temporals.format(task.fechaCreacion, 'dd/MM/yyyy')}">@mdo</td>
                 <td><a th:href="@{/task/edit/{id}(id=${task.id})}">Editar</a></td>
-                <td><a href="">Eliminar</a></td>
+                <td><a th:href="@{/task/delete/{id}(id=${task.id})}">Eliminar</a></td>
                 <td><a href="">Ver Tarea</a></td>
 
 

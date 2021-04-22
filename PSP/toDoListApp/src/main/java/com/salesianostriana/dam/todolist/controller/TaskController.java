@@ -66,8 +66,8 @@ public class TaskController {
         }
     }
 
-    @GetMapping("/delete/{id}")
-    public String deleteTask(@PathVariable("id") Long id, Model model) {
+    @GetMapping("/task/delete/{id}")
+    public String deleteTask(@PathVariable("id") long id, Model model) {
         Task task = service.findById(id);
         if (task != null) {
             service.delete(task);

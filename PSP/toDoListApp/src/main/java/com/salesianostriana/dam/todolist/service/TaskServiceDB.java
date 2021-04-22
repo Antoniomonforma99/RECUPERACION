@@ -34,4 +34,9 @@ public class TaskServiceDB implements TaskService {
     public Task edit(Task t) {
         return null;
     }
+
+    @Override
+    public void delete(Task t) {
+        repository.delete(t);
+    }
 }
