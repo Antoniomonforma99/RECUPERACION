@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Primary
 @Service("taskServiceDB")
@@ -26,8 +27,8 @@ public class TaskServiceDB implements TaskService {
     }
 
     @Override
-    public Task findById(long id) {
-        return null;
+    public Optional<Task> findById(long id) {
+        return repository.findById(id);
     }
 
     @Override
@@ -36,7 +37,7 @@ public class TaskServiceDB implements TaskService {
     }
 
     @Override
-    public void delete(Task t) {
-        repository.delete(t);
+    public void deleteById(long id) {
+        repository.deleteById(id);
     }
 }

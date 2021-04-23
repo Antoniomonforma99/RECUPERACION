@@ -42,19 +42,23 @@
         <div class="col-md-offset-2 col-md-8">
             <form method="post" enctype="multipart/form-data" action="#"
                   th:action="@{/task/new/submit}"
-                  th:object="${taskForm}">
+                  th:object="${task}">
                 <h1 th:text="'Nueva tarea'">Nueva
                     tarea</h1>
 
                 <div class="form-group">
-                    <label for="nombre">Nombre de la tarea</label> <input type="text"
-                                                              class="form-control" id="nombre" placeholder="Nombre de la tarea"
-                                                              th:field="*{nombre}" />
+                    <label for="nombre">Nombre de la tarea</label>
+                    <input type="text" class="form-control" id="nombre" placeholder="Nombre de la tarea"
+                           th:field="*{nombre}" />
                 </div>
                 <div class="form-group">
-                    <label for="descripcion">Descripcion</label> <input type="text"
-                                                            class="form-control" id="descipcion"
-                                                            placeholder="Escribe aquí la descripción de la tarea" th:field="*{descripcion}" />
+                    <label for="descripcion">Descripcion</label>
+                    <input type="text" class="form-control" id="descripcion"
+                           placeholder="Escribe aquí la descripción de la tarea" th:field="*{descripcion}" />
+                </div>
+                <div class="form-group">
+                    <input type="date" class="form-control" id="fechaCaducidad"
+                           placeholder="=01/01/2021" th:field="*{fechaCaducidad}" />
                 </div>
                 <button type="submit" class="btn btn-default">Enviar</button>
             </form>

@@ -3,6 +3,8 @@ package com.salesianostriana.dam.todolist.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.apache.tomcat.jni.Local;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -17,6 +19,22 @@ public class Task {
     private long id;
 
     private String nombre;
+
+
+
+    private String descripcion;
+
+    private LocalDate fechaCreacion;
+
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private LocalDate fechaCaducidad;
+
+    public Task(String nombre,String descripcion, LocalDate fechaCaducidad) {
+        this.nombre = nombre;
+        this.fechaCreacion = LocalDate.now();
+        this.descripcion = descripcion;
+        this.fechaCaducidad = fechaCaducidad;
+    }
 
     public long getId() {
         return id;
@@ -55,17 +73,6 @@ public class Task {
     }
 
     public void setFechaCaducidad(LocalDate fechaCaducidad) {
-        this.fechaCaducidad = fechaCaducidad;
-    }
-
-    private String descripcion;
-
-    private LocalDate fechaCreacion, fechaCaducidad;
-
-    public Task(String nombre,String descripcion, LocalDate fechaCaducidad) {
-        this.nombre = nombre;
-        this.fechaCreacion = LocalDate.now();
-        this.descripcion = descripcion;
         this.fechaCaducidad = fechaCaducidad;
     }
 
